@@ -63,11 +63,22 @@ Confirm it is working:
 
 # 4 Create Training Script train.py (SageMaker entry point)
 
-# 5. Manually Test Training on SageMaker. In vs code terminal, enter:
-- export SAGEMAKER_ROLE_ARN="arn:aws:iam::<your-account-id>:role/<your-sagemaker-role>"
+# 5 Use SageMaker
+- Go to IAM Console -> roles -> create role
+    - Select Trusted Entity: AWS service
+    - use case: SageMaker -> Next
+- IAM Console -> roles -> click the role created -> Trust relationships -> 
+- Attach Permissions Policies
+    - AmazonSageMakerFullAccess
+    - AmazonS3FullAccess
+- Name the Role
+    - [Role Name] (eg. SageMakerExecutionRole-FraudDetection) -> Create role
+- Copy the Role ARN
 
-# 6. CI/CD using GitHub Actions
-- Add  scripts/sagemaker_train.py (Train the model on SageMaker)
+# 6 - Add scripts/sagemaker_train.py (Train the model on SageMaker) and copy Role ARN in the file.
+
+# 7. CI/CD using GitHub Actions
+
 - Add sagemaker-ci-cd.yml
 - commit to github main
 

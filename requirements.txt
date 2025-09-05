@@ -1,0 +1,18 @@
+# Core ML & Data Processing
+pandas
+scikit-learn
+xgboost
+joblib
+matplotlib
+seaborn
+numpy 
+# SageMaker SDK (handles compatible boto3 automatically)
+sagemaker==2.171.0
+sagemaker-experiments==0.1.0
+
+# Hugging Face Datasets (with dependencies resolved automatically)
+datasets==4.0.0
+
+
+# Jupyter support
+ipykernel
